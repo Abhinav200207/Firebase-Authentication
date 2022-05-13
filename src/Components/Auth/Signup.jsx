@@ -1,7 +1,8 @@
 import React, { useRef,useState } from "react"
 import { Form, Button, Card,Alert } from "react-bootstrap"
-import { useAuth } from "../AuthContext"
+import { useAuth } from "../../AuthContext"
 import { Link, useNavigate } from "react-router-dom"
+import CenterContainer from "./CenterContainer";
 
 export default function Signup() {
     const emailRef = useRef();
@@ -23,7 +24,7 @@ export default function Signup() {
             setError("")
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
-            navigate("/")
+            navigate("/user")
         } catch {
             setError("Failed to create an account")
         }
@@ -32,7 +33,7 @@ export default function Signup() {
     }
 
     return (
-        <>
+        <CenterContainer>
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Sign Up</h2>
@@ -59,6 +60,6 @@ export default function Signup() {
             <div className="w-100 text-center mt-2">
                 Already have an account? <Link to="/login">Log In</Link>
             </div>
-        </>
+        </CenterContainer>
     )
 }
