@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../../AuthContext"
-import { useNavigate } from "react-router-dom"
+import { useNavigate,Link } from "react-router-dom"
 import CenterContainer from "./CenterContainer"
 
 export default function Profile() {
@@ -28,6 +28,9 @@ export default function Profile() {
           <h2 className="text-center mb-4">Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser.email}
+          <Link to="/" className="btn btn-primary w-100 mt-3">
+            Dashboard
+          </Link>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">

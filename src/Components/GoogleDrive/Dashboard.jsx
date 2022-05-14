@@ -7,6 +7,7 @@ import Folder from "./Folder"
 import File from "./File"
 import { useParams, useNavigate } from "react-router-dom"
 import FolderBreadcrumbs from './BreadCrumbs'
+import AddFileButton from './AddFileButton'
 
 
 export default function Dashboard() {
@@ -20,7 +21,7 @@ export default function Dashboard() {
       <NavbarComponent />
       <Container fluid>
         <AddFolderButton currentFolder={folder} />
-        {/* <AddFileButton currentFolder={folder} /> */}
+        <AddFileButton currentFolder={folder} />
         <FolderBreadcrumbs currentFolder={folder} />
         {childFolders.length > 0 && (
           <div className="d-flex flex-wrap">
